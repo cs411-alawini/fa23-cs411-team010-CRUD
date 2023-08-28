@@ -4,10 +4,10 @@
 
 |   Info      |        Description     |
 | ----------- | ---------------------- |
-| TeamID      |        Team-000        |
-| TeamName    |         sample         |
-| Captain     |       Abdu Alawini     |
-| Captain     |  alawini@illinois.edu  |
+| TeamID      |        Team-010        |
+| TeamName    |         CRUD           |
+| Captain     |        Liam Li         |
+| Captain     |    zl127@illinois.edu  |
 | Member1     |        Kevin Pei       |
 | Member1     |   kevin2@illinois.edu  |
 | Member2     |    Bharati Kulkarni    |
