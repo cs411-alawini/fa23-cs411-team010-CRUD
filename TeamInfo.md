@@ -8,8 +8,8 @@
 | TeamName    |         CRUD           |
 | Captain     |        Liam Li         |
 | Captain     |    zl127@illinois.edu  |
-| Member1     |        Kevin Pei       |
-| Member1     |   kevin2@illinois.edu  |
+| Member1     |        Yifan Zhong     |
+| Member1     |  yzhong32@illinois.edu |
 | Member2     |    Bharati Kulkarni    |
 | Member2     |  bharati1@illinois.edu |
 | Member3     |                        |
