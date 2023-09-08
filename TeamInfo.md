@@ -10,10 +10,8 @@
 | Captain     |    zl127@illinois.edu  |
 | Member1     |        Yifan Zhong     |
 | Member1     |  yzhong32@illinois.edu |
-| Member2     |       Jionghao Wei     |
-| Member2     |    wei33@illinois.edu  |
-| Member3     |     Nimit Kapadia      |
-| Member3     |  nimithk2@illinois.edu |
+| Member2     |     Nimit Kapadia      |
+| Member2     |  nimithk2@illinois.edu |
 
 ## Project Information
 
