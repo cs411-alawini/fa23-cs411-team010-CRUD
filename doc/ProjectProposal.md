@@ -34,7 +34,11 @@ This rich and real-world dataset will serve as the foundation for our database a
 
 ## Functionality ##
 This website serves as a platform for users to efficiently search, create, and manage their flight bookings. Users can initiate flight searches by specifying their
-departure airport or city, destination airport or city, and the desired departure date. Once the search is complete, all available flight information, including any connecting flights, will be displayed. Users can then proceed to book their preferred flight, generating a unique booking ID in the process. The booking details will encompass the booking ID, the user's full name, as well as comprehensive flight information such as the departure and destination airports, departure date, etc. In the future, users will be required to provide their booking ID, full name, and the current date to access the booking information on that day, including flight delay and cancellation information. Customers can review this information, update their booking details, or cancel their booking.
+departure airport or city, destination airport or city, and the desired departure date. Once the search is complete, all available flight information, including any connecting flights, will be displayed. Users can then proceed to book their preferred flight, generating a unique booking ID in the process. The booking details will encompass the booking ID, the user's full name, as well as comprehensive flight information such as the departure and destination airports, departure date, etc. 
+
+In the future, users will be required to provide their booking ID, full name, and the current date to access the booking information on that day, including flight delay and cancellation information. Customers can review this information, update their booking details, or cancel their booking.
+
+![Flight](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/b654cb61-0f63-4e18-afa1-b49746f7c25e)
 
 ## Project Work Distribution
 
