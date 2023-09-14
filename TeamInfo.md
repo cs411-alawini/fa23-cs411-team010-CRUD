@@ -17,10 +17,12 @@
 
 |   Info      |        Description     |
 | ----------- | ---------------------- |
-|  Title      |       ProjectTitle     |
-| System URL  |      link_to_system    |
-| Video Link  |      link_to_video     |
+|  Title      |       Flight Scheduling System     |
+| System URL  |          |
+| Video Link  |           |
 
 ## Project Summary
 
-This is a summary of the project!
+This group project is an online flight scheduling system which helps passengers search for ticket information, purchase tickets, cancel tickets, transfer flights, etc. This group project uses React as the front-end framework, Node.js as the back-end framework, and MySQL as the database. The data stored in the database is "2015 Flight Delays and Cancellations" which consists of 5.8M records.
+
+
