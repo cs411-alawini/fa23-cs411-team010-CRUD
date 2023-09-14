@@ -33,12 +33,17 @@ Airport Details: Information about the airports, including IATA codes, airport n
 This rich and real-world dataset will serve as the foundation for our database and web application project, providing authentic historical flight data from 2015. Through careful data processing, database implementation, and web application development, we will leverage this dataset to create a practical and user-friendly tool for passengers and airlines to manage and access critical flight information.
 
 ## Functionality ##
+### Basic Functions ###
 This website serves as a platform for users to efficiently search, create, and manage their flight bookings. Users can initiate flight searches by specifying their
-departure airport or city, destination airport or city, and the desired departure date. Once the search is complete, all available flight information, including any connecting flights, will be displayed. Users can then proceed to book their preferred flight, generating a unique booking ID in the process. The booking details will encompass the booking ID, the user's full name, as well as comprehensive flight information such as the departure and destination airports, departure date, etc. 
+departure airport or city, destination airport or city, and the desired departure date. Once the search is complete, all available flight information, including any connecting flights, will be displayed. Users can then proceed to book their preferred flight, generating a unique booking ID in the process. The booking details will encompass the booking ID, the user's full name, as well as comprehensive flight information such as the departure and destination airports, departure date, etc. In the future, users will be required to provide their booking ID, full name, and the current date to access the booking information on that day, including flight delay and cancellation information. Customers can review this information and decide to update their booking details or cancel their booking.
 
-In the future, users will be required to provide their booking ID, full name, and the current date to access the booking information on that day, including flight delay and cancellation information. Customers can review this information, update their booking details, or cancel their booking.
+### Creative Functions ###
+This web application will include capacity management by adding a new attribute named "Capacity" with a default value 1000. Each time a passenger books a ticket, cancels a ticket, or reschdules a ticket, the Capacity attribute will automatically add 1 or minus 1. If the Capacity attributs is below 0, the system will give a "Sold Out" warning! This web application will also include a clendar and a world map to further visualize all flights scheduled for the day, helping passengers plan their journeys efficiently. 
 
+## Low-fidelity UI Mockup ##
 ![Flight](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/b654cb61-0f63-4e18-afa1-b49746f7c25e)
 
-## Project Work Distribution
-
+## Project Work Distribution (Temporary) ##
+Liam Li: Add(book a ticket), Search(search ticket information)
+Yifan Zhong: Delete(cancel a ticket), Update(reschedule a ticket)
+Nimit Kapadia: Capacity management, visualization
