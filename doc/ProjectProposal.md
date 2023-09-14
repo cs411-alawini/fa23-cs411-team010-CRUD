@@ -44,6 +44,6 @@ This web application will include capacity management by adding a new attribute 
 ![Flight](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/b654cb61-0f63-4e18-afa1-b49746f7c25e)
 
 ## Project Work Distribution (Temporary) ##
-Liam Li: Add(book a ticket), Search(search ticket information)
-Yifan Zhong: Delete(cancel a ticket), Update(reschedule a ticket)
+Liam Li: Add(book a ticket), Search(search ticket information)   
+Yifan Zhong: Delete(cancel a ticket), Update(reschedule a ticket)   
 Nimit Kapadia: Capacity management, visualization
