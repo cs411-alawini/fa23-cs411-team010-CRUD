@@ -32,6 +32,7 @@ Relationship:
 5. 1 airport - multiple flights, 1 flight - 2 airports
 6. 1 ticket - 1 flight, 1 flight - multiple tickets | "many-to-one"
    
+![er2](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/8c306da8-a1e2-499d-8903-c3be4e241bbe)
 
 # Normalization
 BCNF or 3NF?
