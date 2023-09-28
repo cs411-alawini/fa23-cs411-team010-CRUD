@@ -1,4 +1,4 @@
-### Description ###
+# Description #
 1. Passengers are uniquely identified by the passenger ID. Each passenger also has information about his/her first name, last name, date of birth, email address, and phone number.
 2. Airlines are uniquely identified by the airline ID. Each airline also has information about its name.
 3. Airports are uniquely identified by the airport ID. Each airport also has information about its name and location (city, state, latitude, and longitude).
@@ -11,6 +11,9 @@
 9. Each airline can operate multiple flights. Each flight is operated by exactly one airline.
 10. Each airport can have multiple flights. Each flight includes exactly two airports (departure airport and desination airport).
 11. Each ticket shows the infomation of exactly one flight. Each flight can include multiple tickets.
+
+# Normalization #
+
 
 
 # ER Diagram # 
