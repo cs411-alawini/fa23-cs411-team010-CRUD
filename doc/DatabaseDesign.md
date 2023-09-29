@@ -7,14 +7,9 @@
 
 6. Each passenger can purchase multiple tickets. Each ticket is purchased by exactly one passenger.
 7. Each passenger can take multiple flights. Each flight includes multiple passengers.
-8. Each airline can sell multiple tickets. Each ticket is sold by exactly on airline.
-9. Each airline can operate multiple flights. Each flight is operated by exactly one airline.
-10. Each airport can have multiple flights. Each flight includes exactly two airports (departure airport and desination airport).
-11. Each ticket shows the infomation of exactly one flight. Each flight can include multiple tickets.
-
-# Normalization #
-
-
+8. Each airline can operate multiple flights. Each flight is operated by exactly one airline.
+9. Each airport can have multiple flights. Each flight includes exactly two airports (departure airport and desination airport).
+10. Each ticket shows the infomation of exactly one flight. Each flight can include multiple tickets.
 
 # ER Diagram # 
 Entities: 
@@ -27,10 +22,9 @@ E. Flight((FlightNumber, AirlineId) (PK), DepartureAirport (FK), DestinationAirp
 Relationship:
 1. 1 passenger - multiple tickets, 1 ticket - 1 passenger | "many-to-one"
 2. 1 passenger - multiple flights, 1 flight - multiple passengers | "many-to-many"
-3. 1 airline - multiple tickets, 1 ticket - 1 airline | "many-to-one"
-4. 1 airline - multiple flights, 1 flight - 1 airline | "many-to-one"
-5. 1 airport - multiple flights, 1 flight - 2 airports
-6. 1 ticket - 1 flight, 1 flight - multiple tickets | "many-to-one"
+3. 1 airline - multiple flights, 1 flight - 1 airline | "many-to-one"
+4. 1 airport - multiple flights, 1 flight - 2 airports
+5. 1 ticket - 1 flight, 1 flight - multiple tickets | "many-to-one"
    
 ![er2](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/8c306da8-a1e2-499d-8903-c3be4e241bbe)
 
