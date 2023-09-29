@@ -12,14 +12,14 @@
 10. Each ticket shows the infomation of exactly one flight. Each flight can include multiple tickets.
 
 # ER Diagram # 
-Entities: 
-A. Passenger(PassengerId (PK), PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone)
-B. Airline(AirlineId (PK), AirlineName)
-C. Airport(AirportId (PK), AirportName, City, State, Latitude, Longitude)
-D. Ticket(TicketId (PK), (AirlineId, FlightNumber) (FK), PassengerId (FK), TickStatus)
-E. Flight((FlightNumber, AirlineId) (PK), DepartureAirport (FK), DestinationAirport (FK), ScheduleDate, ScheduleDeparetureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason)
+## Entities: ## 
+1. Passenger(PassengerId(**PK**), PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone)
+2. Airline(AirlineId(**PK**), AirlineName)
+3. Airport(AirportId(**PK**), AirportName, City, State, Latitude, Longitude)
+4. Ticket(TicketId(**PK**), (FlightNumber, AirlineId)(**FK**), PassengerId(**FK**), TicketStatus)
+5. Flight((FlightNumber, AirlineId)(**PK**), DepartureAirport(**FK**), DestinationAirport(**FK**), ScheduleDate, ScheduleDeparetureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason)
 
-Relationship:
+## Relationship: ##
 1. 1 passenger - multiple tickets, 1 ticket - 1 passenger | "many-to-one"
 2. 1 passenger - multiple flights, 1 flight - multiple passengers | "many-to-many"
 3. 1 airline - multiple flights, 1 flight - 1 airline | "many-to-one"
