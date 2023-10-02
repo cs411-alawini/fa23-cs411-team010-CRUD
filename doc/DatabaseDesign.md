@@ -103,6 +103,11 @@ CREATE TABLE PassengerFlight (
     PRIMARY KEY (PassengerId, FlightNumber, AirlineId)
 );
 ```
-# Normalization
-BCNF or 3NF?
-Dependencies: 
+# Normalization: #
+Based on the relational schema, we have six tables: Passenger, Airline, Airport, Flight, Ticket, PassengerFlight
+Dependencies for Passenger FD1: PassengerId -> PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone
+Dependencies for Airline FD2: AirlineId -> AirlineName
+Dependencies for Airport FD3: 
+Dependencies for Flight FD4: FlightNumber, AirlineId -> DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDepartureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason
+Dependencies for Ticket FD5: TicketId -> FlightNumber, AirlineId, PassengerId, TicketStatus
+Dependencies for PassengerFlight FD6:
