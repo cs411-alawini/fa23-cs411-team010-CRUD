@@ -110,4 +110,4 @@ Dependencies for Airline FD2: AirlineId -> AirlineName
 Dependencies for Airport FD3: 
 Dependencies for Flight FD4: FlightNumber, AirlineId -> DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDepartureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason
 Dependencies for Ticket FD5: TicketId -> FlightNumber, AirlineId, PassengerId, TicketStatus
-Dependencies for PassengerFlight FD6:
+Dependencies for PassengerFlight FD6: PassengerId, FlightNumber, AirlineId -> PassengerId, FlightNumber, AirlineId
