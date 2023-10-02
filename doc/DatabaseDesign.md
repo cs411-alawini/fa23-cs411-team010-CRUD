@@ -25,7 +25,8 @@
 3. 1 airline - multiple flights, 1 flight - 1 airline | "many-to-one"
 4. 1 airport - multiple flights, 1 flight - 2 airports
 5. 1 ticket - 1 flight, 1 flight - multiple tickets | "many-to-one"
-   
+
+## Diagram: ##
 ![er2](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/8c306da8-a1e2-499d-8903-c3be4e241bbe)
 
 # Normalization
