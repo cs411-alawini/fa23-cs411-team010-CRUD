@@ -1,7 +1,7 @@
 # Description #
 1. Passengers are uniquely identified by the passenger ID. Each passenger also has information about his/her first name, last name, date of birth, email address, and phone number.
 2. Airlines are uniquely identified by the airline ID. Each airline also has information about its name.
-3. Airports are uniquely identified by the airport ID. Each airport also has information about its name and location (city, state, latitude, and longitude).
+3. Airports are uniquely identified by the airport ID. Each airport also has information about its name and location (city and state).
 4. Tickets are uniquely identified by the ticket ID. Each ticket also has information about the airline ID, flight number, passenger ID, and ticket status.
 5. Flights are uniquely identified by the flight number and airline ID. Each flight also has information about its departure airport, destination airport, scheduled date, scheduled departure time, scheduled arrival time, actual departure time, actual arrival time, flight status, cancellation reason, delay reason.
 
@@ -15,7 +15,7 @@
 ## Entities: ## 
 1. Passenger(PassengerId, PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone)
 2. Airline(AirlineId, AirlineName)
-3. Airport(AirportId, AirportName, City, State, Latitude, Longitude)
+3. Airport(AirportId, AirportName, City, State)
 4. Ticket(TicketId, FlightNumber, AirlineId, PassengerId, TicketStatus)
 5. Flight(FlightNumber, AirlineId, DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDeparetureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason)
 
