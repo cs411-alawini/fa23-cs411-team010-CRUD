@@ -34,7 +34,7 @@ Dependencies:
 
 # Relational Schema #
 
-```
+```sql
 CREATE TABLE Passenger (
     PassengerId INT PRIMARY KEY,
     PassengerFirstName VARCHAR(255),
