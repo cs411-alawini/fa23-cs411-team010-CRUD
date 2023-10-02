@@ -51,8 +51,6 @@ CREATE TABLE Airport (
     AirportName VARCHAR(1000),
     City VARCHAR(100),
     State VARCHAR(50),
-    Latitude REAL,
-    Longitude REAL
 );
 
 CREATE TABLE Flight (
@@ -93,7 +91,7 @@ CREATE TABLE PassengerFlight (
 ```
 1. Passenger (PassengerId: INT [PK], PassengerFirstName: VARCHAR(255), PassengerLastName: VARCHAR(255), DateOfBirth: DATE, Email: VARCHAR(100), Phone: INT)
 2. Airline (AirlineId: VARCHAR(10) [PK], AirlineName: VARCHAR(1000))
-3. Airport (AirportId: VARCHAR(10) [PK], AirportName: VARCHAR(1000), City: VARCHAR(100), State: VARCHAR(50), Latitude: REAL, Longitude: REAL)
+3. Airport (AirportId: VARCHAR(10) [PK], AirportName: VARCHAR(1000), City: VARCHAR(100), State: VARCHAR(50))
 4. Flight (FlightNumber: INT [PK], AirlineId: VARCHAR(10) [PK], DepartureAirport: VARCHAR(10) [FK to Airport.AirportId], DestinationAirport: VARCHAR(10) [FK to Airport.AirportId], ScheduleDate: DATE, ScheduleDepartureTime: INT, ScheduleArrivalTime: INT, ActualDepartureTime: INT, ActualArrivalTime: INT, FlightStatus: VARCHAR(20), CancellationReason: VARCHAR(100), DelayReason: VARCHAR(100))
 5. Ticket (TicketId: INT [PK], FlightNumber: INT [FK to Flight.FlightNumber], AirlineId: VARCHAR(10) [FK to Flight.AirlineId], PassengerId: INT [FK to Passenger.PassengerId], TicketStatus: VARCHAR(20))
 6. PassengerFlight (PassengerId: INT [FK to Passenger.PassengerId], FlightNumber: INT [FK to Flight.FlightNumber], AirlineId: VARCHAR(10) [FK to Flight.AirlineId], PRIMARY KEY (PassengerId, FlightNumber, AirlineId))
