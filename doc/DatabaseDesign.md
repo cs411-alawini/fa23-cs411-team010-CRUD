@@ -13,11 +13,11 @@
 
 # ER Diagram # 
 ## Entities: ## 
-1. Passenger(PassengerId(**PK**), PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone)
-2. Airline(AirlineId(**PK**), AirlineName)
-3. Airport(AirportId(**PK**), AirportName, City, State, Latitude, Longitude)
-4. Ticket(TicketId(**PK**), (FlightNumber, AirlineId)(**FK**), PassengerId(**FK**), TicketStatus)
-5. Flight((FlightNumber, AirlineId)(**PK**), DepartureAirport(**FK**), DestinationAirport(**FK**), ScheduleDate, ScheduleDeparetureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason)
+1. Passenger(PassengerId, PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone)
+2. Airline(AirlineId, AirlineName)
+3. Airport(AirportId, AirportName, City, State, Latitude, Longitude)
+4. Ticket(TicketId, FlightNumber, AirlineId, PassengerId, TicketStatus)
+5. Flight(FlightNumber, AirlineId, DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDeparetureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason)
 
 ## Relationships: ##
 1. 1 passenger - multiple tickets, 1 ticket - 1 passenger | "many-to-one"
@@ -30,19 +30,6 @@
 ![er2](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/8c306da8-a1e2-499d-8903-c3be4e241bbe)
 
 # Relational Schema #
-
-Passenger (PassengerId: INT [PK], PassengerFirstName: VARCHAR(255), PassengerLastName: VARCHAR(255), DateOfBirth: DATE, Email: VARCHAR(100), Phone: INT)
-
-Airline (AirlineId: VARCHAR(10) [PK], AirlineName: VARCHAR(1000))
-
-Airport (AirportId: VARCHAR(10) [PK], AirportName: VARCHAR(1000), City: VARCHAR(100), State: VARCHAR(50), Latitude: REAL, Longitude: REAL)
-
-Flight (FlightNumber: INT [PK], AirlineId: VARCHAR(10) [PK], DepartureAirport: VARCHAR(10) [FK to Airport.AirportId], DestinationAirport: VARCHAR(10) [FK to Airport.AirportId], ScheduleDate: DATE, ScheduleDepartureTime: INT, ScheduleArrivalTime: INT, ActualDepartureTime: INT, ActualArrivalTime: INT, FlightStatus: VARCHAR(20), CancellationReason: VARCHAR(100), DelayReason: VARCHAR(100))
-
-Ticket (TicketId: INT [PK], FlightNumber: INT [FK to Flight.FlightNumber], AirlineId: VARCHAR(10) [FK to Flight.AirlineId], PassengerId: INT [FK to Passenger.PassengerId], TicketStatus: VARCHAR(20))
-
-PassengerFlight (PassengerId: INT [FK to Passenger.PassengerId], FlightNumber: INT [FK to Flight.FlightNumber], AirlineId: VARCHAR(10) [FK to Flight.AirlineId], PRIMARY KEY (PassengerId, FlightNumber, AirlineId))
-
 ```sql
 CREATE TABLE Passenger (
     PassengerId INT PRIMARY KEY,
@@ -103,8 +90,15 @@ CREATE TABLE PassengerFlight (
     PRIMARY KEY (PassengerId, FlightNumber, AirlineId)
 );
 ```
+1. Passenger (PassengerId: INT [PK], PassengerFirstName: VARCHAR(255), PassengerLastName: VARCHAR(255), DateOfBirth: DATE, Email: VARCHAR(100), Phone: INT)
+2. Airline (AirlineId: VARCHAR(10) [PK], AirlineName: VARCHAR(1000))
+3. Airport (AirportId: VARCHAR(10) [PK], AirportName: VARCHAR(1000), City: VARCHAR(100), State: VARCHAR(50), Latitude: REAL, Longitude: REAL)
+4. Flight (FlightNumber: INT [PK], AirlineId: VARCHAR(10) [PK], DepartureAirport: VARCHAR(10) [FK to Airport.AirportId], DestinationAirport: VARCHAR(10) [FK to Airport.AirportId], ScheduleDate: DATE, ScheduleDepartureTime: INT, ScheduleArrivalTime: INT, ActualDepartureTime: INT, ActualArrivalTime: INT, FlightStatus: VARCHAR(20), CancellationReason: VARCHAR(100), DelayReason: VARCHAR(100))
+5. Ticket (TicketId: INT [PK], FlightNumber: INT [FK to Flight.FlightNumber], AirlineId: VARCHAR(10) [FK to Flight.AirlineId], PassengerId: INT [FK to Passenger.PassengerId], TicketStatus: VARCHAR(20))
+6. PassengerFlight (PassengerId: INT [FK to Passenger.PassengerId], FlightNumber: INT [FK to Flight.FlightNumber], AirlineId: VARCHAR(10) [FK to Flight.AirlineId], PRIMARY KEY (PassengerId, FlightNumber, AirlineId))
+
 # Normalization: #
-Based on the relational schema, we have six tables: Passenger, Airline, Airport, Flight, Ticket, PassengerFlight
+Based on the relational schema, we have six tables: Passenger, Airline, Airport, Flight, Ticket, and PassengerFlight. 
 Dependencies for Passenger FD1: PassengerId -> PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone
 Dependencies for Airline FD2: AirlineId -> AirlineName
 Dependencies for Airport FD3: 
