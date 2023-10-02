@@ -27,7 +27,8 @@
 5. 1 ticket - 1 flight, 1 flight - multiple tickets | "many-to-one"
 
 ## Diagram: ##
-![er2](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/8c306da8-a1e2-499d-8903-c3be4e241bbe)
+![erd](https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/84d441fb-e943-4cca-9232-5d1f173783ce)
+
 
 # Relational Schema #
 ```sql
