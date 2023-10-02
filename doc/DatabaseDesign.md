@@ -98,17 +98,17 @@ CREATE TABLE PassengerFlight (
 # Normalization: #
 Based on the relational schema, we have six tables/relations: Passenger, Airline, Airport, Flight, Ticket, and PassengerFlight. 
 
-1. Dependencies for Passenger: PassengerId -> PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone
+1. Dependencies for Passenger: PassengerId -> PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone   
 Since PassengerId + = PassengerId, PassengerFirstName, PassengerLastName, DateOfBirth, Email, Phone, we can conclude that PassengerId is the superkey for Passenger table, thus Passenger is in BCNF.
-2. Dependencies for Airline: AirlineId -> AirlineName
+2. Dependencies for Airline: AirlineId -> AirlineName   
 Since AirlineId + = AirlineId, AirlineName, we can conclude that AirlineId is the superkey for Airline table, thus Airline is in BCNF.
-3. Dependencies for Airport: AirportId -> AirportName, City, State
+3. Dependencies for Airport: AirportId -> AirportName, City, State   
 Since AirportId + = AirportId, AirportName, City, State, we can conclude that AirportId is the superkey for Airport table, thus Airport is in BCNF.
-4. Dependencies for Flight: FlightNumber, AirlineId -> DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDepartureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason
+4. Dependencies for Flight: FlightNumber, AirlineId -> DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDepartureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason   
 Since FlightNumber, AirlineId + = FlightNumber, AirlineId, DepartureAirport, DestinationAirport, ScheduleDate, ScheduleDepartureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason, we can conclude that (FlightNumber, AirlineId) is the superkey for Flight table, thus Flight is in BCNF.
-5. Dependencies for Ticket: TicketId -> FlightNumber, AirlineId, PassengerId, TicketStatus
+5. Dependencies for Ticket: TicketId -> FlightNumber, AirlineId, PassengerId, TicketStatus   
 Since TicketId + = TicketId, FlightNumber, AirlineId, PassengerId, TicketStatus, we can conclude that TicketeId is the superkey for Ticket table, thus Ticket is in BCNF.
-6. Dependencies for PassengerFlight: PassengerId, FlightNumber, AirlineId -> PassengerId, FlightNumber, AirlineId
+6. Dependencies for PassengerFlight: PassengerId, FlightNumber, AirlineId -> PassengerId, FlightNumber, AirlineId   
 Since PassengerId, FlightNumber, AirlineId -> PassengerId, FlightNumber, AirlineId, we can conclude that (PassengerId, FlightNumber, AirlineId) is the superkey for PassengerFlight table, thus PassengerFlight is in BCNF.
 
 To sum up, our schema is already in BCNF and we don't have to do any further normalization. The reason why we choose BCNF instead of 3NF is that BCNF can minimize redundancy which can make our application more efficient.
