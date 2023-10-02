@@ -19,7 +19,7 @@
 4. Ticket(TicketId(**PK**), (FlightNumber, AirlineId)(**FK**), PassengerId(**FK**), TicketStatus)
 5. Flight((FlightNumber, AirlineId)(**PK**), DepartureAirport(**FK**), DestinationAirport(**FK**), ScheduleDate, ScheduleDeparetureTime, ScheduleArrivalTime, ActualDepartureTime, ActualArrivalTime, FlightStatus, CancellationReason, DelayReason)
 
-## Relationship: ##
+## Relationships: ##
 1. 1 passenger - multiple tickets, 1 ticket - 1 passenger | "many-to-one"
 2. 1 passenger - multiple flights, 1 flight - multiple passengers | "many-to-many"
 3. 1 airline - multiple flights, 1 flight - 1 airline | "many-to-one"
