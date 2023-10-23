@@ -49,7 +49,7 @@ CREATE TABLE Airport (
     AirportId VARCHAR(10) PRIMARY KEY,
     AirportName VARCHAR(1000),
     City VARCHAR(100),
-    State VARCHAR(50),
+    State VARCHAR(50)
 );
 
 CREATE TABLE Flight (
