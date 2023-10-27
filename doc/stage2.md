@@ -37,7 +37,7 @@ CREATE TABLE Passenger (
     PassengerLastName VARCHAR(255),
     DateOfBirth DATE,
     Email VARCHAR(100),
-    Phone INT
+    Phone CHAR(10)
 );
 
 CREATE TABLE Airline (
