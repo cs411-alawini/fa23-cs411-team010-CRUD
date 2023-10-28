@@ -81,9 +81,9 @@ Provide the Id and name of the passenger who booked a ticket for flights departi
 <img width="747" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/084e7cec-cd5a-49af-b47d-73f5e0ca7371">
 
 ### EXPLAIN ANALYZE After Adding Index to Passenger.PassengerId
-<img width="512" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/97b16fcc-7bbe-4e35-b0be-65759ed91e68">
+<img width="495" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/464b7c3e-6d51-410d-abae-c5c36939baf5">
 <img width="756" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/aeb08aea-07d4-47cc-93e1-64d356546087">
-
+Since you're using PassengerId in the WHERE clause and for joining, having an index on it will speed up the retrieval.
 
 # Advanced Query 2
 
