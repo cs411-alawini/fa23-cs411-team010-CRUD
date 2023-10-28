@@ -63,6 +63,9 @@ CREATE TABLE PassengerFlight (
 ### Tables With At Least 1000 Rows
 
 # Advanced Query 1
+### Description 
+Provide the Id and name of the passenger who booked a ticket for flights departing and arriving at a specific airport, the ticket also has a specific status. Here, I use departureAirport = 'ORD', DestinationAirport = 'JFK', TicketStatus <> 'CANCELLED' as an example.
+### Code
 <img width="806" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/1c62ab78-3113-4ece-b0ff-02016ce52142">
 
 # Indexing Analysis 1
