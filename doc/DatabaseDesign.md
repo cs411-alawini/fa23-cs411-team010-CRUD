@@ -71,6 +71,11 @@ This query involves concepts "JOIN" and "Subquery".
 ### Code
 <img width="806" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/1c62ab78-3113-4ece-b0ff-02016ce52142">
 
+### Result
+<img width="154" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/8fe30efa-2f34-4c25-bdf6-428bc707a8a3">
+
+The output result is less than 15 rows.
+
 # Indexing Analysis 1
 
 # Advanced Query 2
