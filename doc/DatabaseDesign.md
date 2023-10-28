@@ -84,7 +84,7 @@ Provide the Id and name of the passenger who booked a ticket for flights departi
 <img width="495" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/464b7c3e-6d51-410d-abae-c5c36939baf5">
 <img width="756" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/aeb08aea-07d4-47cc-93e1-64d356546087">
 
-Since you're using PassengerId in the WHERE clause and for joining, having an index on it will speed up the retrieval.
+The reason why I add index to Passenger.PassengerId is that this attribute is used in SELECT and JOIN clause
 
 ### EXPLAIN ANALYZE After Adding Index to (Ticket.PassengerId, Ticket.FlightNumber)
 <img width="566" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/774ffe82-77ff-4a80-9129-69b3bb7a1feb">
