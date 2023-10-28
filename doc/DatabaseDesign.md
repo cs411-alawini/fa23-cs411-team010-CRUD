@@ -1,4 +1,5 @@
-## DDL commands
+# Database Implementation
+### DDL
 ```sql
 CREATE TABLE Passenger (
     PassengerId INT PRIMARY KEY,
