@@ -90,8 +90,11 @@ Since you're using PassengerId in the WHERE clause and for joining, having an in
 <img width="566" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/774ffe82-77ff-4a80-9129-69b3bb7a1feb">
 <img width="754" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/33bd2214-1e44-45b1-a563-2f07eeb67466">
 
+Covers the join condition and the WHERE clause in the subquery.
 
-
+### EXPLAIN ANALYZE After Adding Index to Flight.FlightNumber
+<img width="459" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/fda6e9be-4579-4aee-841c-156c0d58937f">
+<img width="757" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/d7568c02-4db4-4d8f-a88c-12c63ea3dc5d">
 
 
 
