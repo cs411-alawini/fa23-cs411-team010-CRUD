@@ -63,6 +63,7 @@ CREATE TABLE PassengerFlight (
 ### Tables With At Least 1000 Rows
 
 # Advanced Query 1
+<img width="806" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/1c62ab78-3113-4ece-b0ff-02016ce52142">
 
 # Indexing Analysis 1
 
