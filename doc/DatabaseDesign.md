@@ -66,7 +66,7 @@ CREATE TABLE PassengerFlight (
 ### Description 
 Provide the Id and name of the passenger who booked a ticket for flights departing and arriving at a specific airport, the ticket also has a specific status. Here, I use departureAirport = 'ORD', DestinationAirport = 'JFK', TicketStatus <> 'CANCELLED' as an example.   
 
-This query involves concepts "JOIN" and "Subquery".
+*This query involves concepts "JOIN" and "Subquery".
 
 ### Code
 <img width="806" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/1c62ab78-3113-4ece-b0ff-02016ce52142">
@@ -74,9 +74,14 @@ This query involves concepts "JOIN" and "Subquery".
 ### Result
 <img width="154" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/8fe30efa-2f34-4c25-bdf6-428bc707a8a3">
 
-The output result is less than 15 rows.
+*The output result is less than 15 rows.
 
 # Indexing Analysis 1
+### EXPLAIN ANALYZE Before Adding Indexes
+<img width="747" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/084e7cec-cd5a-49af-b47d-73f5e0ca7371">
+
+### EXPLAIN ANALYZE After Adding Index to Passenger.PassengerId
+
 
 # Advanced Query 2
 
