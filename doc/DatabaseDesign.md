@@ -1,4 +1,6 @@
 # Database Implementation
+### Proof of Connection
+
 ### DDL
 ```sql
 CREATE TABLE Passenger (
@@ -58,3 +60,12 @@ CREATE TABLE PassengerFlight (
     PRIMARY KEY (PassengerId, FlightNumber, AirlineId)
 );
 ```
+### Tables With At Least 1000 Rows
+
+# Advanced Query 1
+
+# Indexing Analysis 1
+
+# Advanced Query 2
+
+# Indexing Analysis 2
