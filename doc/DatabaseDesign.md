@@ -99,5 +99,15 @@ The reason why I add index to (Ticket.PassengerId, Ticket.FlightNumber) is that 
 The reason why I add index to Flight.FlightNumber is that this attribute is used in JOIN clause, so that adding an index can improve the query performance.
 
 # Advanced Query 2
+### Description 
+For each airport, determine the number of departing flights operated by each airline. List the results in descending order based on the number of departures.
+
+*This query involves concepts "Join of multiple relations", "Subqueries", and "Aggregation via GROUP BY".
+
+### Code
+<img width="673" alt="Screenshot 2023-10-29 at 8 59 22 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/25536c17-df90-4674-898e-6a9175f93c8c">
+
+### Result
+<img width="307" alt="Screenshot 2023-10-29 at 8 59 22 PM copy" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/322f8bd7-6a96-45d7-8d59-7a64a1ab2ddb">
 
 # Indexing Analysis 2
