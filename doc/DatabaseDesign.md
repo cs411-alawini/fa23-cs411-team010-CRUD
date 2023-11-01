@@ -88,11 +88,11 @@ Provide the Id and name of the passenger who booked a ticket for flights departi
 ### EXPLAIN ANALYZE Before Adding Indexes
 <img width="747" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/084e7cec-cd5a-49af-b47d-73f5e0ca7371">
 
-### EXPLAIN ANALYZE After Adding Index to Passenger.PassengerId
-<img width="495" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/464b7c3e-6d51-410d-abae-c5c36939baf5">
+### EXPLAIN ANALYZE After Adding Index to (Passenger.PassengerFirstName, Passenger.PassengerLastName)
+<img width="693" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/b7a69c06-9043-4b6b-be7a-c940c95b6bb2">
 <img width="756" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/aeb08aea-07d4-47cc-93e1-64d356546087">
 
-The reason why I add index to Passenger.PassengerId is that this attribute is used in SELECT clause and JOIN clause, so that adding an index can improve the query performance. Based on the screenshot, 
+The reason why I add index to (Passenger.PassengerFirstName, Passenger.PassengerLastName) is that this combination of attributes is used in SELECT clause, so that adding an index can improve the query performance. Based on the screenshot, 
 
 ### EXPLAIN ANALYZE After Adding Index to (Ticket.PassengerId, Ticket.FlightNumber)
 <img width="566" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/774ffe82-77ff-4a80-9129-69b3bb7a1feb">
