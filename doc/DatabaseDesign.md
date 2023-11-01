@@ -2,9 +2,6 @@
 ### Proof of Connection
 <img width="1561" alt="Screenshot 2023-10-31 at 11 57 46 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/470994f1-faf1-4754-978c-c93d94fb87cd">
 
-
-
-
 ### DDL
 ```sql
 CREATE TABLE Passenger (
@@ -68,8 +65,6 @@ CREATE TABLE PassengerFlight (
 
 <img width="600" alt="Screenshot 2023-10-31 at 11 57 50 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/bef8cefa-46db-4dc7-8b86-d42332d6efda">
 
-
-
 # Advanced Query 1
 ### Description 
 Provide the Id and name of the passenger who booked a ticket for flights departing and arriving at a specific airport, the ticket also has a specific status. Here, I use departureAirport = 'ORD', DestinationAirport = 'JFK', TicketStatus <> 'CANCELLED' as an example.   
@@ -92,19 +87,19 @@ Provide the Id and name of the passenger who booked a ticket for flights departi
 <img width="693" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/b7a69c06-9043-4b6b-be7a-c940c95b6bb2">
 <img width="756" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/aeb08aea-07d4-47cc-93e1-64d356546087">
 
-The reason why I add index to (Passenger.PassengerFirstName, Passenger.PassengerLastName) is that this combination of attributes is used in SELECT clause, so that adding an index can improve the query performance. Based on the screenshot, the actual execution time before adding the index is between 0.579 and 1.09 seconds, after adding the index, the actual execution time is between 0.359 and 0.654 seconds, the query performance is improved.
+The reason why I add index to (Passenger.PassengerFirstName, Passenger.PassengerLastName) is that this combination of attributes is used in SELECT clause, so that adding an index can improve the query performance. Based on the screenshot, before adding the index, the actual time to get first row is 0.579 ms and the actual time to get all rows is 1.09 ms. After adding the index, the actual time to get first row is 0.359 ms and the actual time to get all rows is 0.654 ms. Thus, the query performance is improved.
 
 ### EXPLAIN ANALYZE After Adding Index to (Ticket.PassengerId, Ticket.FlightNumber)
 <img width="566" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/774ffe82-77ff-4a80-9129-69b3bb7a1feb">
 <img width="754" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/33bd2214-1e44-45b1-a563-2f07eeb67466">
 
-The reason why I add index to (Ticket.PassengerId, Ticket.FlightNumber) is that this combination of attributes is used in JOIN clause and SELECT clause of the subquery, so that adding an index can improve the query performance. Based on the screenshot, the actual execution time before adding the index is between 0.579 and 1.09 seconds, after adding the index, the actual execution time is between 0.362 and 0.635 seconds, the query performance is improved.
+The reason why I add index to (Ticket.PassengerId, Ticket.FlightNumber) is that this combination of attributes is used in JOIN clause and SELECT clause of the subquery, so that adding an index can improve the query performance. Based on the screenshot, before adding the index, the actual time to get first row is 0.579 ms and the actual time to get all rows is 1.09 ms. After adding the index, the actual time to get first row is 0.362 ms and the actual time to get all rows is 0.635 seconds. Thus, the query performance is improved.
 
 ### EXPLAIN ANALYZE After Adding Index to Flight.FlightNumber
 <img width="463" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/e6e8420a-0bb4-4ff3-9199-c7a15877632d">
 <img width="757" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/d7568c02-4db4-4d8f-a88c-12c63ea3dc5d">
 
-The reason why I add index to Flight.FlightNumber is that this attribute is used in JOIN clause, so that adding an index can improve the query performance. Based on the screenshot, the actual execution time before adding the index is between 0.579 and 1.09 seconds, after adding the index, the actual execution time is between 0.373 and 0.689 seconds, the query performance is improved.
+The reason why I add index to Flight.FlightNumber is that this attribute is used in JOIN clause, so that adding an index can improve the query performance. Based on the screenshot, before adding the index, the actual time to get first row is 0.579 ms and the actual time to get all rows is 1.09 ms. After adding the index, the actual time to get first row is 0.373 ms and the actual time to get all rows is 0.689 ms. Thus, the query performance is improved.
 
 # Advanced Query 2
 ### Description 
