@@ -100,7 +100,7 @@ The reason why I add index to Flight.FlightNumber is that this attribute is used
 
 # Advanced Query 2
 ### Description 
-For each airport, count the number of ticket departures from it for passengers born before January 1, 1970, where the actual departure time was delayed beyond the scheduled time.
+For each airport, count the number of ticket departures from it for passengers born before January 1, 1970, where the actual departure time was before the scheduled time.
 
 *This query involves concepts "Join of multiple relations", "Subqueries", and "Aggregation via GROUP BY".
 
@@ -118,12 +118,17 @@ For each airport, count the number of ticket departures from it for passengers b
 <img width="759" alt="Screenshot 2023-10-31 at 11 20 28 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/0eba5e22-7433-4fdf-9395-4ff8d87800f2">
 <img width="810" alt="birth" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/0c8e20bc-3341-49bd-bd2f-41f8b31a7858">
 
+The reason why I add index to Passenger.DateOfBirth is that this attribute is used in WHERE clause, so that adding an index can improve the query performance.
+
 ### EXPLAIN ANALYZE After Adding Index to Airport.AirportName
 <img width="757" alt="Screenshot 2023-10-31 at 11 22 15 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/c7201c52-323b-45b6-a365-8d6b481b905f">
 <img width="817" alt="a" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/1b57b0a2-0bdd-42bd-9dab-288f6f8cb5f2">
+
+The reason why I add index to Airport.AirportName is that this attribute is selected, so that adding an index can improve the query performance.
 
 ### EXPLAIN ANALYZE After Adding Index to (Flight.ScheduleDepartureTime, Flight.ActualDepartureTime)
 <img width="881" alt="Screenshot 2023-10-31 at 11 21 52 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/047c7de2-3e12-4929-871d-b32db3ff409c">
 <img width="827" alt="de" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/3d976353-39b3-4d6f-87b6-94797ff0d23f">
 
+The reason why I add index to Flight.ScheduleDepartureTime and Flight.ActualDepartureTime is that this attribute is used in WHERE clause, so that adding an index can improve the query performance.
 
