@@ -108,7 +108,7 @@ The reason why I add index to Flight.FlightNumber is that this attribute is used
 
 # Advanced Query 2
 ### Description 
-For each airport, count the number of tickets that departed earlier than their scheduled departure time, where the passenger was born before January 1, 1970.
+For each airport, count the number of tickets departed from it such that the actual departure time was earlier than the scheduled departure time, where the passenger was born before January 1, 1970.
 
 *This query involves concepts "Join of multiple relations", "Subqueries", and "Aggregation via GROUP BY".
 
