@@ -1,5 +1,9 @@
 # Database Implementation
 ### Proof of Connection
+<img width="1561" alt="Screenshot 2023-10-31 at 11 57 46 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/470994f1-faf1-4754-978c-c93d94fb87cd">
+
+
+<img width="700" alt="Screenshot 2023-10-31 at 11 49 31 PM" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143434843/a9a56ce9-8b15-4b8a-b0e4-9a40f669ff5f">
 
 ### DDL
 ```sql
