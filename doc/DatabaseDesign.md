@@ -101,7 +101,7 @@ The reason why I add index to (Passenger.PassengerFirstName, Passenger.Passenger
 The reason why I add index to (Ticket.PassengerId, Ticket.FlightNumber) is that this combination of attributes is used in JOIN clause and SELECT clause of the subquery, so that adding an index can improve the query performance.
 
 ### EXPLAIN ANALYZE After Adding Index to Flight.FlightNumber
-<img width="459" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/fda6e9be-4579-4aee-841c-156c0d58937f">
+<img width="463" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/e6e8420a-0bb4-4ff3-9199-c7a15877632d">
 <img width="757" alt="image" src="https://github.com/cs411-alawini/fa23-cs411-team010-CRUD/assets/143149260/d7568c02-4db4-4d8f-a88c-12c63ea3dc5d">
 
 The reason why I add index to Flight.FlightNumber is that this attribute is used in JOIN clause, so that adding an index can improve the query performance.
