@@ -9,7 +9,7 @@ const updateRoutes = require("./routes/updateRoutes");
 const port = 3000;
 
 const app = express();
-
+app.use(express.json());
 app.use(
   cors({
     origin: "http://localhost:5173",

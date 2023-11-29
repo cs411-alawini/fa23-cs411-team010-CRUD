@@ -3,8 +3,9 @@ const router = express.Router();
 const conn = require("../db");
 
 // Cancel Ticket Route
-router.get("/cancel-ticket", (req, res) => {
-  const { ticketId } = req.query;
+router.post("/cancel-ticket", (req, res) => {
+  const { ticketId } = req.body;
+  console.log(req.body, ticketId);
 
   // Ensure ticketId is provided
   if (!ticketId) {

@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const conn = require("../db");
 
-router.get("/update-email", (req, res) => {
-  const { ticketId, email } = req.query;
+router.post("/update-email", (req, res) => {
+  const { ticketId, email } = req.body;
 
   if (!ticketId || !email) {
     res.status(400).send("Ticket ID and email are required");
@@ -43,8 +43,8 @@ router.get("/update-email", (req, res) => {
   });
 });
 
-router.get("/update-phone", (req, res) => {
-  const { ticketId, phone } = req.query;
+router.post("/update-phone", (req, res) => {
+  const { ticketId, phone } = req.body;
 
   // Validate input
   if (!ticketId || !phone) {

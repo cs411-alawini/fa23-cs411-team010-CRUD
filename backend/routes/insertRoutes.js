@@ -11,7 +11,7 @@ function createTicket(firstName, lastName, airlineId, flightNumber) {
       }
 
       const passengerQuery =
-        "INSERT INTO Passenger (PassengerFirstName, PassengerLastName) VALUES (?, ?)";
+        "INSERT INTO Passenger (PassengerFirstName, PassengerLastName, Email, Phone) VALUES (?, ?, '', '')";
       conn.query(
         passengerQuery,
         [firstName, lastName],
@@ -54,7 +54,8 @@ function createTicket(firstName, lastName, airlineId, flightNumber) {
 }
 
 router.post("/buy-ticket", (req, res) => {
-  const { firstName, lastName, airlineId, flightNumber } = req.query;
+  const { firstName, lastName, airlineId, flightNumber } = req.body;
+  console.log(firstName, lastName, airlineId, flightNumber);
 
   createTicket(firstName, lastName, airlineId, flightNumber)
     .then((result) => {

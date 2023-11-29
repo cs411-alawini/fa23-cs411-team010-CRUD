@@ -30,8 +30,10 @@ router.get("/search-ticket", (req, res) => {
 
     if (ticket.length === 0) {
       res.json([]);
+      console.log("Invalid");
       return;
     }
+    console.log(ticket);
 
     const query = `SELECT * FROM Ticket NATURAL JOIN Flight NATURAL JOIN Passenger WHERE TicketId = ${id}`;
     conn.query(query, (err, ticket) => {
