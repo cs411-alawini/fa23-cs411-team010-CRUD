@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import './App.css';
+import Button from '@mui/material/Button';
+import {Box} from "@mui/material";
 
 // Utility function for time formatting
 const formatTime = (time) => {
@@ -23,20 +25,30 @@ const Modal = ({ show, onClose, children }) => {
 
 // Search Form Component
 const SearchForm = ({ fromText, setFromText, toText, setToText, date, setDate, handleSearch }) => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <label>
+
+    <div
+        style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            border: '1px solid #ccc', // adds a light grey border
+            borderRadius: '8px', // rounds the corners
+            padding: '10px' // adds space inside the border
+        }}
+    >
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             From
             <input type="text" value={fromText} onChange={(e) => setFromText(e.target.value)} />
         </label>
-        <label>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             To
             <input type="text" value={toText} onChange={(e) => setToText(e.target.value)} />
         </label>
-        <label>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             Date
             <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         </label>
-        <button onClick={handleSearch}>Search</button>
+        <Button variant="contained" onClick={handleSearch}>Search</Button>
     </div>
 );
 
@@ -44,12 +56,20 @@ const SearchForm = ({ fromText, setFromText, toText, setToText, date, setDate, h
 const FlightList = ({ flights, handleBuy }) => (
     <div>
         {flights.map((flight, index) => (
-            <div key={index} className="flight-box">
+            <Box key={index} sx={{ display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                padding: '10px',
+                boxShadow: 2,
+                backgroundColor: 'grey.200',
+                color: 'text.primary'
+            }}>
                 <p>Flight: {flight.AirlineId} {String(flight.FlightNumber).padStart(4, '0')}</p>
                 <p>Schedule: {formatTime(flight.ScheduleDepartureTime)} - {formatTime(flight.ScheduleArrivalTime)}</p>
-                <button onClick={() => handleBuy(flight)}>Buy</button>
-            </div>
+                <Button variant="contained" onClick={() => handleBuy(flight)}>Buy</Button>
+            </Box>
         ))}
+
     </div>
 );
 
@@ -81,7 +101,9 @@ const FlightSearchComponent = () => {
             firstName: formData.firstName,
             lastName: formData.lastName,
             airlineId: selectedFlight.AirlineId,
-            flightNumber: selectedFlight.FlightNumber
+            flightNumber: selectedFlight.FlightNumber,
+            email: formData.email,
+            phone: formData.phone
         };
 
         const url = 'http://localhost:3000/buy-ticket';
@@ -144,11 +166,23 @@ const FlightSearchComponent = () => {
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>
-                        <label>First Name: <input type="text" name="firstName" onChange={handleInputChange}/></label><br/>
-                        <label>Last Name: <input type="text" name="lastName" onChange={handleInputChange}/></label><br/>
-                        <label>Phone (Optional): <input type="tel" name="phone" onChange={handleInputChange}/></label><br/>
-                        <label>Email (Optional): <input type="email" name="email" onChange={handleInputChange}/></label><br/>
-                        <button type="submit">Submit</button>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                            <label style={{ width: '40%' }}>First Name:</label>
+                            <input type="text" name="firstName" onChange={handleInputChange} style={{ width: '58%' }}/>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                            <label style={{ width: '40%' }}>Last Name:</label>
+                            <input type="text" name="lastName" onChange={handleInputChange} style={{ width: '58%' }}/>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                            <label style={{ width: '40%' }}>Phone:</label>
+                            <input type="tel" name="phone" onChange={handleInputChange} style={{ width: '58%' }}/>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                            <label style={{ width: '40%' }}>Email:</label>
+                            <input type="email" name="email" onChange={handleInputChange} style={{ width: '58%' }}/>
+                        </div>
+                        <Button variant='contained' type="submit">Submit</Button>
                     </form>
                 )}
             </Modal>

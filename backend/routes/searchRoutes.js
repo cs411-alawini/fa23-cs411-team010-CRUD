@@ -19,7 +19,16 @@ router.get("/search-flight", (req, res) => {
 
 router.get("/search-ticket", (req, res) => {
   const { id, firstName, lastName } = req.query;
-  const verify = `SELECT * FROM Ticket NATURAL JOIN Passenger WHERE PassengerFirstName = '${firstName}' AND PassengerLastName = '${lastName}'`;
+  console.log(
+    "search ticket  -",
+    "ticket id:",
+    id,
+    ",first name:",
+    firstName,
+    ",last name:",
+    lastName,
+  );
+  const verify = `SELECT * FROM Ticket NATURAL JOIN Passenger WHERE  TicketId = ${id} AND PassengerFirstName = '${firstName}' AND PassengerLastName = '${lastName}'`;
 
   conn.query(verify, (err, ticket) => {
     if (err) {
@@ -30,7 +39,7 @@ router.get("/search-ticket", (req, res) => {
 
     if (ticket.length === 0) {
       res.json([]);
-      console.log("Invalid");
+      console.log("invalid search");
       return;
     }
     console.log(ticket);
