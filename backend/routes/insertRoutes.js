@@ -53,14 +53,12 @@ function createTicket(firstName, lastName, airlineId, flightNumber) {
   });
 }
 
-router.get("/buy-ticket", (req, res) => {
+router.post("/buy-ticket", (req, res) => {
   const { firstName, lastName, airlineId, flightNumber } = req.query;
 
   createTicket(firstName, lastName, airlineId, flightNumber)
     .then((result) => {
-      res.json({
-        message: `Ticket added with ID: ${result.ticketId}, Passenger ID: ${result.passengerId}`,
-      });
+      res.json(result);
       console.log(
         `Ticket added with ID: ${result.ticketId}, Passenger ID: ${result.passengerId}`,
       );
