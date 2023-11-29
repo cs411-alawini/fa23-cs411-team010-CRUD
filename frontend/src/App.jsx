@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import FlightSearchComponent from "./FlightSearch.jsx";
 import TicketSearchComponent from "./TicketSearch.jsx";
 import './App.css'
 
@@ -10,6 +9,7 @@ function App() {
   return (
     <>
         <TicketSearchComponent></TicketSearchComponent>
+        <FlightSearchComponent></FlightSearchComponent>
     </>
   )
 }
