@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import axios from "axios";
 import './App.css';
 
+const Modal = ({ show, onClose, children }) => {
+    if (!show) return null;
+    return (
+        <div className="modal-backdrop">
+            <div className="modal">
+                {children}
+                <button onClick={onClose}>Close</button>
+            </div>
+        </div>
+    );
+};
 const formatTime = (time) => {
     let timeStr = String(time).padStart(4, '0');
     return timeStr.slice(0, 2) + ':' + timeStr.slice(2);
@@ -48,7 +59,49 @@ const TicketSearchComponent = () => {
     const [firstNameText, setFirstNameText] = useState('Victor');
     const [lastNameText, setLastNameText] = useState('Olsen');
     const [tickets, setTickets] = useState([]);
+    const [updateTicket, setUpdateTicket] = useState(null);
+    const [newEmail, setNewEmail] = useState('');
+    const [newPhone, setNewPhone] = useState('');
+    const [showUpdateModal, setShowUpdateModal] = useState(false);
 
+    const handleUpdate = (ticket) => {
+        setUpdateTicket(ticket);
+        setNewEmail(ticket.Email);
+        setNewPhone(ticket.Phone);
+        setShowUpdateModal(true);
+    };
+
+    const handleUpdateSubmit = async (event) => {
+        event.preventDefault();
+        const data = {
+            ticketId: updateTicket.TicketId,
+            email: newEmail
+        };
+
+
+        axios.post('http://localhost:3000/update-email', data)
+            .then(response => {
+                // Handle response
+                // setShowUpdateModal(false);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        const dataPhone = {
+            ticketId: updateTicket.TicketId,
+            phone: newPhone
+        }
+        axios.post('http://localhost:3000/update-phone', dataPhone)
+            .then(response => {
+                // Handle response
+                handleSearch();
+                setShowUpdateModal(false);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    };
     const handleSearch = () => {
         const url = 'http://localhost:3000/search-ticket';
         const params = { id: ticketIdText, firstName: firstNameText, lastName: lastNameText };
@@ -65,19 +118,14 @@ const TicketSearchComponent = () => {
     const handleCancel = (ticket) => {
         const url = 'http://localhost:3000/cancel-ticket';
         const params = { ticketId: ticket.TicketId };
-        axios.get(url, { params })
-            .then(response => {
+        axios.post(url, params)
+            .then(() => {
                 setTickets([]);
             })
             .catch(error => {
                 console.error('Error during fetch:', error);
             });
     }
-
-    const handleUpdate = (ticket) => {
-        return;
-    }
-
 
     return (
         <>
@@ -90,6 +138,13 @@ const TicketSearchComponent = () => {
                 setLastNameText={setLastNameText}
                 handleSearch={handleSearch}
             />
+            <Modal show={showUpdateModal} onClose={() => setShowUpdateModal(false)}>
+                <form onSubmit={handleUpdateSubmit}>
+                    <label>Email: <input type="email" value={newEmail} onChange={e => setNewEmail(e.target.value)} /></label><br/>
+                    <label>Phone: <input type="tel" value={newPhone} onChange={e => setNewPhone(e.target.value)} /></label><br/>
+                    <button type="submit">Submit</button>
+                </form>
+            </Modal>
             <TicketList tickets={tickets} handleCancel={handleCancel} handleUpdate={handleUpdate}></TicketList>
         </>
     )

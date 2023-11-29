@@ -78,14 +78,15 @@ const FlightSearchComponent = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const params = {
-            ...formData,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
             airlineId: selectedFlight.AirlineId,
             flightNumber: selectedFlight.FlightNumber
         };
 
         const url = 'http://localhost:3000/buy-ticket';
 
-        axios.post(url, { params })
+        axios.post(url, params)
             .then(response => {
                 setTicketId(response.data.ticketId);
                 setPurchaseSuccess(true);
