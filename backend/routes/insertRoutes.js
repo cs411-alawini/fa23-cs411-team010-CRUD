@@ -2,7 +2,14 @@ const express = require("express");
 const router = express.Router();
 const conn = require("../db");
 
-function createTicket(firstName, lastName, airlineId, flightNumber) {
+function createTicket(
+  firstName,
+  lastName,
+  airlineId,
+  flightNumber,
+  email,
+  phone,
+) {
   return new Promise((resolve, reject) => {
     conn.beginTransaction((err) => {
       if (err) {
@@ -11,10 +18,10 @@ function createTicket(firstName, lastName, airlineId, flightNumber) {
       }
 
       const passengerQuery =
-        "INSERT INTO Passenger (PassengerFirstName, PassengerLastName, Email, Phone) VALUES (?, ?, '', '')";
+        "INSERT INTO Passenger (PassengerFirstName, PassengerLastName, Email, Phone) VALUES (?, ?, ?, ?)";
       conn.query(
         passengerQuery,
-        [firstName, lastName],
+        [firstName, lastName, email, phone],
         (error, passengerResults) => {
           if (error) {
             return conn.rollback(() => {
@@ -54,10 +61,11 @@ function createTicket(firstName, lastName, airlineId, flightNumber) {
 }
 
 router.post("/buy-ticket", (req, res) => {
-  const { firstName, lastName, airlineId, flightNumber } = req.body;
-  console.log(firstName, lastName, airlineId, flightNumber);
+  const { firstName, lastName, airlineId, flightNumber, email, phone } =
+    req.body;
+  console.log(firstName, lastName, airlineId, flightNumber, email, phone);
 
-  createTicket(firstName, lastName, airlineId, flightNumber)
+  createTicket(firstName, lastName, airlineId, flightNumber, email, phone)
     .then((result) => {
       res.json(result);
       console.log(

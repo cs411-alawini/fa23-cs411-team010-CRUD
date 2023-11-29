@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import './App.css';
+import Button from '@mui/material/Button';
+import {Box} from "@mui/material";
 
 const Modal = ({ show, onClose, children }) => {
     if (!show) return null;
@@ -18,27 +20,42 @@ const formatTime = (time) => {
     return timeStr.slice(0, 2) + ':' + timeStr.slice(2);
 };
 const SearchForm = ({ ticketIdText, setTicketIdText, firstNameText, setFirstNameText, lastNameText, setLastNameText, handleSearch }) => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <label>
+    <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        border: '1px solid #ccc', // adds a light grey border
+        borderRadius: '8px', // rounds the corners
+        padding: '10px' // adds space inside the border
+    }}>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             Ticket Id
             <input type="text" value={ticketIdText} onChange={(e) => setTicketIdText(e.target.value)} />
         </label>
-        <label>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             First Name
             <input type="text" value={firstNameText} onChange={(e) => setFirstNameText(e.target.value)} />
         </label>
-        <label>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             Last Name
             <input type="text" value={lastNameText} onChange={(e) => setLastNameText(e.target.value)} />
         </label>
-        <button onClick={handleSearch}>Search</button>
+        <Button variant="contained" onClick={handleSearch}>Search</Button>
     </div>
 );
 
 const TicketList = ({ tickets, handleCancel, handleUpdate }) => (
     <div>
         {tickets.map((ticket, index) => (
-            <div key={index} className="flight-box">
+            <Box key={index} sx={{ display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                padding: '10px',
+                boxShadow: 2,
+                backgroundColor: 'grey.200',
+                color: 'text.primary'
+            }}>
+            {/*<div key={index} className="flight-box">*/}
                 <p>Ticket Id: {ticket.TicketId}</p>
                 <p>Flight: {ticket.AirlineId} {String(ticket.FlightNumber).padStart(4, '0')}</p>
                 <p>Passenger: {ticket.PassengerFirstName} {ticket.PassengerLastName}</p>
@@ -47,10 +64,12 @@ const TicketList = ({ tickets, handleCancel, handleUpdate }) => (
                 <p>Route: {ticket.DepartureAirport} - {ticket.DestinationAirport}</p>
                 <p>Schedule Date: {ticket.ScheduleDate}</p>
                 <p>Schedule Time: {formatTime(ticket.ScheduleDepartureTime)} - {formatTime(ticket.ScheduleArrivalTime)}</p>
-
-                <button onClick={() => handleCancel(ticket)}>Cancel</button>
-                <button onClick={() => handleUpdate(ticket)}>Update</button>
-            </div>
+                <div style={{ display: 'flex' }}>
+                    <Button variant='contained' onClick={() => handleCancel(ticket)}>Cancel</Button>
+                    <Button variant='contained' onClick={() => handleUpdate(ticket)} style={{ marginLeft: '10px' }}>Update</Button>
+                </div>
+            {/*</div>*/}
+            </Box>
         ))}
     </div>
 );
@@ -140,9 +159,15 @@ const TicketSearchComponent = () => {
             />
             <Modal show={showUpdateModal} onClose={() => setShowUpdateModal(false)}>
                 <form onSubmit={handleUpdateSubmit}>
-                    <label>Email: <input type="email" value={newEmail} onChange={e => setNewEmail(e.target.value)} /></label><br/>
-                    <label>Phone: <input type="tel" value={newPhone} onChange={e => setNewPhone(e.target.value)} /></label><br/>
-                    <button type="submit">Submit</button>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                        <label style={{ width: '40%' }}>Phone:</label>
+                        <input type="tel" name="phone" onChange={e => setNewPhone(e.target.value)} style={{ width: '58%' }}/>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                        <label style={{ width: '40%' }}>Email:</label>
+                        <input type="email" name="email" onChange={e => setNewEmail(e.target.value)} style={{ width: '58%' }}/>
+                    </div>
+                    <Button variant='contained' type="submit">Submit</Button>
                 </form>
             </Modal>
             <TicketList tickets={tickets} handleCancel={handleCancel} handleUpdate={handleUpdate}></TicketList>

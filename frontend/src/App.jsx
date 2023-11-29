@@ -9,6 +9,7 @@ function App() {
   return (
     <>
         <TicketSearchComponent></TicketSearchComponent>
+        <br></br>
         <FlightSearchComponent></FlightSearchComponent>
     </>
   )
