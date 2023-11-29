@@ -18,7 +18,7 @@ router.get("/search-flight", (req, res) => {
 });
 
 router.get("/search-ticket", (req, res) => {
-  const { id, firstName, lastName, date } = req.query;
+  const { id, firstName, lastName } = req.query;
   const verify = `SELECT * FROM Ticket NATURAL JOIN Passenger WHERE PassengerFirstName = '${firstName}' AND PassengerLastName = '${lastName}'`;
 
   conn.query(verify, (err, ticket) => {
