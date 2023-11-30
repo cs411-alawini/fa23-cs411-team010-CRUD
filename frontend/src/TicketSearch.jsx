@@ -75,9 +75,9 @@ const TicketList = ({ tickets, handleCancel, handleUpdate }) => (
     </div>
 );
 const TicketSearchComponent = () => {
-    const [ticketIdText, setTicketIdText] = useState('1');
-    const [firstNameText, setFirstNameText] = useState('Victor');
-    const [lastNameText, setLastNameText] = useState('Olsen');
+    const [ticketIdText, setTicketIdText] = useState('3');
+    const [firstNameText, setFirstNameText] = useState('Crystal');
+    const [lastNameText, setLastNameText] = useState('Cohen');
     const [tickets, setTickets] = useState([]);
     const [updateTicket, setUpdateTicket] = useState(null);
     const [newEmail, setNewEmail] = useState('');
