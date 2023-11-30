@@ -1,12 +1,7 @@
 # team010-CRUD
 
-## Run the App
+[Visit the App](http://ec2-3-144-76-68.us-east-2.compute.amazonaws.com/)
 
-To start the application, execute the following command in your terminal:
-
-```bash
-./start.sh
-```
 
 [//]: # (This is a template for CS411 project repository. Please make sure that your title follows the convention: [TeamID]-[YourTeamName]. All TeamID should have a three digit coding &#40;i.e. if you are team 20, you should have `team020` as your ID.&#41;. You should also make sure that your url for this repository is [fa23-cs411-team000-teamname.git] so TAs can correctly clone your repository and keep them up-to-date.)
 
