@@ -1,9 +1,12 @@
 # team010-CRUD
 
+## Visit the App
+
+http://ec2-3-138-112-51.us-east-2.compute.amazonaws.com/
+
 ## Run the App
 
 To start the application, execute the following command in your terminal:
-
 ```bash
 ./start.sh
 ```
