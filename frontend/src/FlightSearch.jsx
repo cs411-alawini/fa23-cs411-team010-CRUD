@@ -4,6 +4,7 @@ import './App.css';
 import Button from '@mui/material/Button';
 import {Box} from "@mui/material";
 
+const apiUrl = import.meta.env.VITE_API_URL;
 // Utility function for time formatting
 const formatTime = (time) => {
     let timeStr = String(time).padStart(4, '0');
@@ -106,7 +107,7 @@ const FlightSearchComponent = () => {
             phone: formData.phone
         };
 
-        const url = 'http://localhost:3000/buy-ticket';
+	const url = apiUrl + '/buy-ticket';
 
         axios.post(url, params)
             .then(response => {
@@ -121,11 +122,12 @@ const FlightSearchComponent = () => {
 
     // Handler for flight search
     const handleSearch = () => {
-        const url = 'http://localhost:3000/search-flight';
+        const url = apiUrl + '/search-flight';
         const params = { from: fromText, to: toText, date: date };
 
         axios.get(url, { params })
             .then(response => {
+		    console.log('API Response:', response.data);
                 setFlights(response.data);
             })
             .catch(error => {

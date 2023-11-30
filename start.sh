@@ -9,36 +9,22 @@ read -p "Enter database user (default: root): " db_user
 db_user=${db_user:-root}
 
 read -sp "Enter database password: " db_password
+db_password=${db_password:-123456}
 echo
 
 read -p "Enter database name: " db_name
+db_name=${db_name:-team10}
 
-# Export database details as environment variables
 export DB_HOST=$db_host
 export DB_USER=$db_user
 export DB_PASSWORD=$db_password
 export DB_NAME=$db_name
 
-
-# Navigate to the backend directory
-# shellcheck disable=SC2164
 cd backend
-
-# Install backend dependencies
 npm install
 
-# Run the backend server using nodemon, with environment variables
-nodemon app.js &
-
-# Navigate to the frontend directory
-# shellcheck disable=SC2164
 cd ../frontend
-
-# Install frontend dependencies
 npm install
 
-# Run the frontend development server
-npm run dev &
+sudo systemctl start nginx
 
-# Open the application in the browser
-open http://localhost:5173

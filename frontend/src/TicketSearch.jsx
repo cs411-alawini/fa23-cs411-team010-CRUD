@@ -4,6 +4,7 @@ import './App.css';
 import Button from '@mui/material/Button';
 import {Box} from "@mui/material";
 
+const apiUrl = import.meta.env.VITE_API_URL;
 const Modal = ({ show, onClose, children }) => {
     if (!show) return null;
     return (
@@ -98,7 +99,7 @@ const TicketSearchComponent = () => {
         };
 
 
-        axios.post('http://localhost:3000/update-email', data)
+        axios.post(apiUrl + '/update-email', data)
             .then(response => {
                 // Handle response
                 // setShowUpdateModal(false);
@@ -111,7 +112,7 @@ const TicketSearchComponent = () => {
             ticketId: updateTicket.TicketId,
             phone: newPhone
         }
-        axios.post('http://localhost:3000/update-phone', dataPhone)
+        axios.post(apiUrl + '/update-phone', dataPhone)
             .then(response => {
                 // Handle response
                 handleSearch();
@@ -122,7 +123,7 @@ const TicketSearchComponent = () => {
             });
     };
     const handleSearch = () => {
-        const url = 'http://localhost:3000/search-ticket';
+        const url = apiUrl + '/search-ticket';
         const params = { id: ticketIdText, firstName: firstNameText, lastName: lastNameText };
 
         axios.get(url, { params })
@@ -135,7 +136,7 @@ const TicketSearchComponent = () => {
     };
 
     const handleCancel = (ticket) => {
-        const url = 'http://localhost:3000/cancel-ticket';
+        const url = apiUrl + '/cancel-ticket';
         const params = { ticketId: ticket.TicketId };
         axios.post(url, params)
             .then(() => {
