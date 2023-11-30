@@ -7,15 +7,18 @@ const deleteRoutes = require("./routes/deleteRoutes");
 const updateRoutes = require("./routes/updateRoutes");
 
 const port = 3000;
-
+const corAddr = 'http://ec2-3-138-112-51.us-east-2.compute.amazonaws.com';
 const app = express();
+
 app.use(express.json());
-app.use(cors({ origin: 'http://ec2-3-144-76-68.us-east-2.compute.amazonaws.com' }));
+app.use(cors({ origin: corAddr }));
 app.use("/", generalRoutes);
 app.use("/", searchRoutes);
 app.use("/", insertRoutes);
 app.use("/", deleteRoutes);
 app.use("/", updateRoutes);
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+
+app.listen(port, function(err){
+   if (err) console.log(err);
+   console.log("Server listening on port", port);
 });

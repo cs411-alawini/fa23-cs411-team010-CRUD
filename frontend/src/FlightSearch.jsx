@@ -78,7 +78,7 @@ const FlightSearchComponent = () => {
     // State definitions
     const [fromText, setFromText] = useState('JFK');
     const [toText, setToText] = useState('LAX');
-    const [date, setDate] = useState('2015-01-01');
+    const [date, setDate] = useState('2015-01-02');
     const [flights, setFlights] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({ firstName: '', lastName: '', phone: '', email: '' });

@@ -23,8 +23,21 @@ export DB_NAME=$db_name
 cd backend
 npm install
 
+PORT=3000
+PID=$(lsof -i :$PORT -t)
+
+if [ ! -z "$PID" ]; then
+    echo "Port $PORT is in use by PID $PID. Attempting to terminate..."
+    kill -9 $PID
+fi
+
+echo "Starting Node.js application..."
+
+node app.js &
 cd ../frontend
 npm install
+npm run build
 
+sudo systemctl stop nginx
 sudo systemctl start nginx
 
