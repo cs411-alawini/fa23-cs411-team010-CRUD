@@ -1,4 +1,17 @@
 #!/bin/bash
+build_frontend=0
+
+while getopts ":b" option; do
+  case $option in
+    b)
+      build_frontend=1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
 
 # Prompt for database details with default values
 # shellcheck disable=SC2162
@@ -33,10 +46,13 @@ fi
 
 echo "Starting Node.js application..."
 
-node app.js &
+nohup node app.js &
 cd ../frontend
 npm install
-npm run build
+
+if [ "$build_frontend" -eq 1 ]; then
+    npm run build
+fi
 
 sudo systemctl stop nginx
 sudo systemctl start nginx
