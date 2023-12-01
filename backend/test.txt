@@ -1,5 +1,0 @@
-http://localhost:3000/search-flight?from=JFK&to=LAX&date=2015-01-01
-http://localhost:3000/search-ticket?id=1&firstName=Victor&lastName=Olsen
-http://localhost:3000/search-ticket?id=1516&firstName=A&lastName=B
-http://localhost:3000/buy-ticket?firstName=A&lastName=B&airlineId=AA&flightNumber=1
-http://localhost:3000/cancel-ticket?ticketId=1516

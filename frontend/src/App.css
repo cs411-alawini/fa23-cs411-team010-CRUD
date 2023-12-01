@@ -66,3 +66,8 @@
   padding: 20px;
   border-radius: 5px;
 }
+
+p {
+  font-size: 14px; /* Smaller font size */
+  line-height: 0; /* Adjust line height as needed */
+}

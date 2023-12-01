@@ -6,7 +6,7 @@ import Modal from "./components/Modal.jsx";
 import TicketList from "./components/TicketList.jsx"
 
 const apiUrl = import.meta.env.VITE_API_URL;
-const SearchForm = ({ ticketIdText, setTicketIdText, firstNameText, setFirstNameText, lastNameText, setLastNameText, handleSearch }) => (
+const SearchForm = ({ firstNameText, setFirstNameText, lastNameText, setLastNameText, emailText, setEmailText, phoneText, setPhoneText, handleSearch }) => (
     <div style={{
         display: 'flex',
         alignItems: 'center',
@@ -16,10 +16,6 @@ const SearchForm = ({ ticketIdText, setTicketIdText, firstNameText, setFirstName
         padding: '10px' // adds space inside the border
     }}>
         <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-            Ticket Id
-            <input type="text" value={ticketIdText} onChange={(e) => setTicketIdText(e.target.value)} />
-        </label>
-        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
             First Name
             <input type="text" value={firstNameText} onChange={(e) => setFirstNameText(e.target.value)} />
         </label>
@@ -27,15 +23,24 @@ const SearchForm = ({ ticketIdText, setTicketIdText, firstNameText, setFirstName
             Last Name
             <input type="text" value={lastNameText} onChange={(e) => setLastNameText(e.target.value)} />
         </label>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+            Email
+            <input type="text" value={emailText} onChange={(e) => setEmailText(e.target.value)} />
+        </label>
+        <label style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+            Phone
+            <input type="text" value={phoneText} onChange={(e) => setPhoneText(e.target.value)} />
+        </label>
         <div style={{ flexGrow: 1 }}></div>
         <Button variant="contained" onClick={handleSearch}>Search</Button>
     </div>
 );
 
-const TicketSearchComponent = () => {
-    const [ticketIdText, setTicketIdText] = useState('');
+const TicketSearchByPassengerComponent = () => {
     const [firstNameText, setFirstNameText] = useState('');
     const [lastNameText, setLastNameText] = useState('');
+    const [emailText, setEmailText] = useState('');
+    const [phoneText, setPhoneText] = useState('');
     const [tickets, setTickets] = useState([]);
     const [updateTicket, setUpdateTicket] = useState(null);
     const [newEmail, setNewEmail] = useState('');
@@ -82,8 +87,8 @@ const TicketSearchComponent = () => {
             });
     };
     const handleSearch = () => {
-        const url = apiUrl + '/search-ticket';
-        const params = { id: ticketIdText, firstName: firstNameText, lastName: lastNameText };
+        const url = apiUrl + '/search-ticket-by-passenger';
+        const params = { firstName: firstNameText, lastName: lastNameText, email: emailText, phone: phoneText};
 
         axios.get(url, { params })
             .then(response => {
@@ -105,17 +110,20 @@ const TicketSearchComponent = () => {
             .catch(error => {
                 console.error('Error during fetch:', error);
             });
+        handleSearch()
     }
 
     return (
         <>
             <SearchForm
-                ticketIdText={ticketIdText}
-                setTicketIdText={setTicketIdText}
                 firstNameText={firstNameText}
                 setFirstNameText={setFirstNameText}
                 lastNameText={lastNameText}
                 setLastNameText={setLastNameText}
+                emailText={emailText}
+                setEmailText={setEmailText}
+                phoneText={phoneText}
+                setPhoneText={setPhoneText}
                 handleSearch={handleSearch}
             />
             <Modal show={showUpdateModal} onClose={() => setShowUpdateModal(false)}>
@@ -135,4 +143,4 @@ const TicketSearchComponent = () => {
         </>
     )
 }
-export default TicketSearchComponent;
+export default TicketSearchByPassengerComponent;
