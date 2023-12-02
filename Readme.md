@@ -2,7 +2,7 @@
 
 ## Visit the App
 
-http://ec2-3-138-112-51.us-east-2.compute.amazonaws.com/
+http://ec2-3-21-125-238.us-east-2.compute.amazonaws.com/
 
 ## Run the App
 

@@ -7,8 +7,8 @@ const deleteRoutes = require("./routes/deleteRoutes");
 const updateRoutes = require("./routes/updateRoutes");
 
 const port = 3000;
-// const corAddr = 'http://ec2-3-138-112-51.us-east-2.compute.amazonaws.com';
-const corAddr = "http://localhost:5173";
+const corAddr = 'http://ec2-3-21-125-238.us-east-2.compute.amazonaws.com';
+// const corAddr = "http://localhost:5173";
 const app = express();
 
 app.use(express.json());

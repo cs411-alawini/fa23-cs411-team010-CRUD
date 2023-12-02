@@ -22,7 +22,7 @@ read -p "Enter database user (default: root): " db_user
 db_user=${db_user:-root}
 
 read -sp "Enter database password: " db_password
-db_password=${db_password:-123456}
+db_password=${db_password:-@a7875747A}
 echo
 
 read -p "Enter database name: " db_name
@@ -46,11 +46,11 @@ fi
 
 echo "Starting Node.js application..."
 
-nohup node app.js &
-cd ../frontend
-npm install
+node app.js &
 
 if [ "$build_frontend" -eq 1 ]; then
+    cd ../frontend
+    npm install
     npm run build
 fi
 
