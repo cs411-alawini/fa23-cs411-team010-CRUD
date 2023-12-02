@@ -41,6 +41,10 @@
   color: #888;
 }
 
+body {
+  background-color: #f3f3f3; /* Example: a light grey background */
+}
+
 .flight-box {
   border: 1px solid #ccc; /* Gray border */
   padding: 10px;
