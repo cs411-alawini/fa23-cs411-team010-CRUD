@@ -7,9 +7,6 @@ import Modal from "./components/Modal.jsx";
 import { formatTime } from "./utils/helpers.js"
 
 const apiUrl = import.meta.env.VITE_API_URL;
-// Utility function for time formatting
-
-// Search Form Component
 const SearchForm = ({ fromText, setFromText, toText, setToText, date, setDate, handleSearch }) => (
 
     <div

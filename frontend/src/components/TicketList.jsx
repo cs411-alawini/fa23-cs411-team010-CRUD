@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button } from "@mui/material";
 import { formatTime } from '../utils/helpers';
-import MapComponent from "./MapComponent.jsx";
+import MapComponentLighter from "./MapComponentLighter.jsx";
 
 const TicketList = ({ tickets, handleCancel, handleUpdate, hasSearched }) => (
     <div>
@@ -33,11 +33,10 @@ const TicketList = ({ tickets, handleCancel, handleUpdate, hasSearched }) => (
                             <Button variant='contained' size='small' onClick={() => handleCancel(ticket)} style={{ marginTop: '0px', marginLeft: '10px' }}>Cancel</Button>
                         </div>
                     </Box>
-                    <MapComponent from={[ticket.FromLongitude, ticket.FromLatitude]} to={[ticket.ToLongitude, ticket.ToLatitude]}></MapComponent>
+                    <MapComponentLighter from={[ticket.FromLatitude, ticket.FromLongitude]} to={[ticket.ToLatitude, ticket.ToLongitude]}></MapComponentLighter>
                 </Box>
             ))
         )}
     </div>
 );
-
 export default TicketList;
