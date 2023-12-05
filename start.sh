@@ -15,8 +15,8 @@ done
 
 # Prompt for database details with default values
 # shellcheck disable=SC2162
-read -p "Enter database host (default: localhost): " db_host
-db_host=${db_host:-localhost}
+read -p "Enter database host (default: 172.31.46.76): " db_host
+db_host=${db_host:-172.31.46.76}
 
 read -p "Enter database user (default: root): " db_user
 db_user=${db_user:-root}
