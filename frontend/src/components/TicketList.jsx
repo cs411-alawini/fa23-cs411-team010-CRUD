@@ -23,6 +23,7 @@ const TicketList = ({ tickets, handleCancel, handleUpdate, hasSearched }) => (
                         <p>Ticket Id: {ticket.TicketId}</p>
                         <p>Flight: {ticket.AirlineId} {String(ticket.FlightNumber).padStart(4, '0')}</p>
                         <p>Passenger: {ticket.PassengerFirstName} {ticket.PassengerLastName}</p>
+                        <p>Passenger Id: {ticket.PassengerId}</p>
                         <p>Route: {ticket.DepartureAirport} - {ticket.DestinationAirport}</p>
                         <p>Email: {ticket.Email}</p>
                         <p>Phone: {ticket.Phone}</p>

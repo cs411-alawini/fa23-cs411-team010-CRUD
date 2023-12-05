@@ -5,42 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 body {
   background-color: #f3f3f3; /* Example: a light grey background */
 }
@@ -57,73 +21,26 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-backdrop {
-  /* Cover the entire viewport */
-  position: fixed;
-  top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-
-  /* Semi-transparent black is common for backdrops */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
-
-  /* High z-index to ensure it's above other elements but below the modal */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-
-  /* No need for padding, border-radius, or size on the backdrop */
 }
 
 .modal {
-  /* Styles to match the modal with the backdrop */
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-
-  /* Center the modal */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  /* Width and height can be a percentage or fixed size */
   width: auto;
-  height: auto; /* Let the content determine the height */
-
-  /* Z-index above the backdrop */
+  height: auto;
   z-index: 1001;
 }
 
-
-
-/*.modal-backdrop {*/
-/*  background-color: white;*/
-/*  padding: 20px;*/
-/*  border-radius: 5px;*/
-/*  !* ... existing styles ... *!*/
-/*  z-index: 1000; !* Ensure this is higher than the z-index of other elements *!*/
-/*  position: fixed; !* or 'absolute', depending on layout *!*/
-/*  top: 300px;*/
-/*  left: 600px;*/
-/*  width: 16%;*/
-/*  height: 19%;*/
-/*}*/
-/*.modal {*/
-/*  background-color: white;*/
-/*  padding: 20px;*/
-/*  border-radius: 5px;*/
-/*  z-index: 1001;*/
-/*}*/
-
 p {
-  font-size: 14px; /* Smaller font size */
-  line-height: 0; /* Adjust line height as needed */
+  font-size: 14px;
+  line-height: 0;
 }

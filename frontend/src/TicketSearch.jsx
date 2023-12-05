@@ -88,6 +88,7 @@ const TicketSearchComponent = () => {
         axios.get(url, { params })
             .then(response => {
                 setTickets(response.data);
+                console.log(response.data)
             })
             .catch(error => {
                 console.error('Error during fetch:', error);

@@ -15,6 +15,7 @@ const MapComponentLighter = ({ from, to }) => {
         <MapContainer
             center={[(from[0] + to[0]) / 2, (from[1] + to[1]) / 2]}
             zoom={4}
+            zoomControl={false}
             whenCreated={setMap}
             style={{ width: '100%', height: '260px' }}
         >
