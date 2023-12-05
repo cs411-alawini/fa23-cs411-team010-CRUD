@@ -11,11 +11,11 @@ const MapComponentLighter = ({ from, to }) => {
         }
     }, [map, from, to]);
 
+     return (
         <MapContainer
             center={[(from[0] + to[0]) / 2, (from[1] + to[1]) / 2]}
-=======
+	    zoom={4}
 	    zoomControl={false}
->>>>>>> Stashed changes
             whenCreated={setMap}
             style={{ width: '100%', height: '260px' }}
         >
